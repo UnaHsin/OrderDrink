@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,16 +20,27 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpK-vs-HO1">
                                 <rect key="frame" x="111.5" y="539" width="152" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="最後一堂課"/>
+                                <state key="normal" title="最後一堂課">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <segue destination="eh4-2A-YHQ" kind="show" id="Gil-6T-Jar"/>
+                                    <segue destination="pFz-fY-j53" kind="show" id="xbn-4t-Xoz"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_2" translatesAutoresizingMaskIntoConstraints="NO" id="b8V-T4-sBM">
+                                <rect key="frame" x="0.0" y="126" width="375" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b8V-T4-sBM" secondAttribute="height" multiplier="75:37" id="OpE-xj-EzG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.0074745640160000003" green="0.2296023965" blue="0.30981698629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="b8V-T4-sBM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HOE-BE-e1P"/>
                             <constraint firstItem="wpK-vs-HO1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P2w-Ss-nIh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wpK-vs-HO1" secondAttribute="bottom" constant="80" id="Ufk-9B-gIt"/>
+                            <constraint firstItem="b8V-T4-sBM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="fsp-Bj-xtC"/>
+                            <constraint firstItem="b8V-T4-sBM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h7e-E0-uwO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,21 +50,205 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="114.69265367316342"/>
         </scene>
-        <!--飲料清單-->
-        <scene sceneID="IQz-bV-eFl">
+        <!--消息 [news]-->
+        <scene sceneID="8hv-Te-SzL">
             <objects>
-                <viewController id="eh4-2A-YHQ" customClass="DrinkListViewController" customModule="OrderDrink" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AbM-QC-IQ6">
+                <viewController id="tqh-P5-DQ2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tqo-V9-LNA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="qU4-PS-l9y"/>
+                        <viewLayoutGuide key="safeArea" id="lzR-gT-ct5"/>
                     </view>
-                    <navigationItem key="navigationItem" title="飲料清單" id="Lcj-Ye-qBr"/>
+                    <tabBarItem key="tabBarItem" title="消息 [news]" id="4Ln-5M-J2d"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nh4-c8-eSw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bAh-CX-Hum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1764" y="114.69265367316342"/>
+            <point key="canvasLocation" x="2863" y="780"/>
+        </scene>
+        <!--茶 [tea]-->
+        <scene sceneID="SDY-iL-oDV">
+            <objects>
+                <viewController id="kC0-CC-RWf" customClass="MenuViewController" customModule="OrderDrink" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ol5-yS-EMX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="00W-34-h8q">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="UPT-7G-zaj">
+                                <rect key="frame" x="302" y="531" width="53" height="53"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UPT-7G-zaj" secondAttribute="height" multiplier="1:1" id="cVr-AF-XH0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <string key="title">立即
+點餐</string>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hOb-ne-98q" kind="show" id="8Dn-j3-X91"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="00W-34-h8q" firstAttribute="trailing" secondItem="vF4-gr-cZ8" secondAttribute="trailing" id="6fb-rW-9MV"/>
+                            <constraint firstItem="00W-34-h8q" firstAttribute="leading" secondItem="vF4-gr-cZ8" secondAttribute="leading" id="BNF-IK-QHz"/>
+                            <constraint firstItem="00W-34-h8q" firstAttribute="bottom" secondItem="vF4-gr-cZ8" secondAttribute="bottom" id="VsE-cy-5Ze"/>
+                            <constraint firstItem="vF4-gr-cZ8" firstAttribute="trailing" secondItem="UPT-7G-zaj" secondAttribute="trailing" constant="20" id="fL2-Hb-PGH"/>
+                            <constraint firstItem="vF4-gr-cZ8" firstAttribute="bottom" secondItem="UPT-7G-zaj" secondAttribute="bottom" constant="34" id="mtF-Nu-G5u"/>
+                            <constraint firstItem="00W-34-h8q" firstAttribute="top" secondItem="vF4-gr-cZ8" secondAttribute="top" id="nvW-W6-6Cm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vF4-gr-cZ8"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="茶 [tea]" id="X3j-3Z-aOX"/>
+                    <connections>
+                        <outlet property="orderBtn" destination="UPT-7G-zaj" id="vz8-5N-urS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UHR-Vy-sYA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2861.5999999999999" y="114.69265367316342"/>
+        </scene>
+        <!--飲料清單-->
+        <scene sceneID="zp2-eo-pRa">
+            <objects>
+                <collectionViewController id="hOb-ne-98q" customClass="DrinkListCollectionViewController" customModule="OrderDrink" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eV8-9I-MeL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VNP-77-j7B">
+                            <size key="itemSize" width="87" height="84"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DrinkListCollectionViewCell" id="ySe-9f-zOU" customClass="DrinkListCollectionViewCell" customModule="OrderDrink" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="87" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZVh-OV-BlN">
+                                    <rect key="frame" x="0.0" y="0.0" width="87" height="84"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="7fK-rI-d8y">
+                                            <rect key="frame" x="0.0" y="0.0" width="87" height="84"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7fK-rI-d8y" firstAttribute="leading" secondItem="ZVh-OV-BlN" secondAttribute="leading" id="MoP-AJ-VPN"/>
+                                        <constraint firstAttribute="trailing" secondItem="7fK-rI-d8y" secondAttribute="trailing" id="PIi-eB-ll5"/>
+                                        <constraint firstItem="7fK-rI-d8y" firstAttribute="top" secondItem="ZVh-OV-BlN" secondAttribute="top" id="Rb7-yA-hGU"/>
+                                        <constraint firstAttribute="bottom" secondItem="7fK-rI-d8y" secondAttribute="bottom" id="Rl3-Ii-FhO"/>
+                                        <constraint firstAttribute="trailing" secondItem="7fK-rI-d8y" secondAttribute="trailing" id="aDc-KU-WoM"/>
+                                        <constraint firstItem="7fK-rI-d8y" firstAttribute="leading" secondItem="ZVh-OV-BlN" secondAttribute="leading" id="gwu-bu-TZs"/>
+                                        <constraint firstAttribute="bottom" secondItem="7fK-rI-d8y" secondAttribute="bottom" id="maT-zv-7vE"/>
+                                        <constraint firstItem="7fK-rI-d8y" firstAttribute="top" secondItem="ZVh-OV-BlN" secondAttribute="top" id="qNJ-L7-alF"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="87" height="84"/>
+                                <connections>
+                                    <outlet property="drinkImg" destination="7fK-rI-d8y" id="EUm-Py-xz6"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="hOb-ne-98q" id="yKM-BX-c4M"/>
+                            <outlet property="delegate" destination="hOb-ne-98q" id="FXq-br-N0L"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="飲料清單" id="9LE-3o-cXd"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h7t-cU-k2M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3756" y="102.99850074962519"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Gv8-8F-9tQ">
+            <objects>
+                <tabBarController id="pFz-fY-j53" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bFh-Ik-aW0"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sZ0-uG-3aS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="JqF-Gd-Kgz" kind="relationship" relationship="viewControllers" id="psJ-7Y-Ej0"/>
+                        <segue destination="kC0-CC-RWf" kind="relationship" relationship="viewControllers" id="h72-5r-7mr"/>
+                        <segue destination="tqh-P5-DQ2" kind="relationship" relationship="viewControllers" id="dS7-SV-D8Q"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m8r-nU-jVi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1921" y="114"/>
+        </scene>
+        <!--可不可 [kbk]-->
+        <scene sceneID="7CS-vn-ebx">
+            <objects>
+                <viewController id="JqF-Gd-Kgz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zHl-aJ-T7h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_3" translatesAutoresizingMaskIntoConstraints="NO" id="qP2-yx-EK0">
+                                <rect key="frame" x="0.0" y="44" width="375" height="145"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qP2-yx-EK0" secondAttribute="height" multiplier="75:29" id="rz8-5v-Rae"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcm-b0-6cg">
+                                <rect key="frame" x="16" y="218" width="265" height="342"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">創立於2008年初夏，台中市向上市場旁，用了8年時間，近3000個日子，堅持做對的事，我們相信任何事物，歸根究底回到最初的本質，都會呈現一種單純美好的狀態-和人一樣。
+
+
+現在就讓紅茶帶你進入時光旅行、憶起青澀的青春，回到舊時代的美好。</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand" translatesAutoresizingMaskIntoConstraints="NO" id="fSc-BH-eon">
+                                <rect key="frame" x="236" y="166" width="123" height="266"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="266" id="Gw1-tz-Us6"/>
+                                    <constraint firstAttribute="width" constant="123" id="WoA-hc-9Yd"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boss" translatesAutoresizingMaskIntoConstraints="NO" id="itC-Ox-FtC">
+                                <rect key="frame" x="225" y="495" width="118" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="c58-qG-VOW"/>
+                                    <constraint firstAttribute="height" constant="123" id="u54-5M-uBn"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9qx-gu-7Hb" firstAttribute="bottom" secondItem="Dcm-b0-6cg" secondAttribute="bottom" constant="58" id="02l-dh-fEi"/>
+                            <constraint firstItem="itC-Ox-FtC" firstAttribute="bottom" secondItem="9qx-gu-7Hb" secondAttribute="bottom" id="DW9-dA-s2t"/>
+                            <constraint firstItem="9qx-gu-7Hb" firstAttribute="trailing" secondItem="fSc-BH-eon" secondAttribute="trailing" constant="16" id="Mrj-FG-R0G"/>
+                            <constraint firstItem="9qx-gu-7Hb" firstAttribute="trailing" secondItem="itC-Ox-FtC" secondAttribute="trailing" constant="32" id="a75-P1-ztu"/>
+                            <constraint firstItem="Dcm-b0-6cg" firstAttribute="top" secondItem="qP2-yx-EK0" secondAttribute="bottom" constant="29" id="d7X-Hd-Cj6"/>
+                            <constraint firstItem="fSc-BH-eon" firstAttribute="top" secondItem="9qx-gu-7Hb" secondAttribute="top" constant="122" id="mbR-y0-ZXb"/>
+                            <constraint firstItem="qP2-yx-EK0" firstAttribute="trailing" secondItem="9qx-gu-7Hb" secondAttribute="trailing" id="mn8-cv-SM2"/>
+                            <constraint firstItem="Dcm-b0-6cg" firstAttribute="leading" secondItem="9qx-gu-7Hb" secondAttribute="leading" constant="16" id="pSj-sP-Sew"/>
+                            <constraint firstItem="qP2-yx-EK0" firstAttribute="top" secondItem="9qx-gu-7Hb" secondAttribute="top" id="sb3-K7-JtO"/>
+                            <constraint firstItem="9qx-gu-7Hb" firstAttribute="trailing" secondItem="Dcm-b0-6cg" secondAttribute="trailing" constant="94" id="yVX-MU-FzT"/>
+                            <constraint firstItem="qP2-yx-EK0" firstAttribute="leading" secondItem="9qx-gu-7Hb" secondAttribute="leading" id="z8a-tm-PAb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9qx-gu-7Hb"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="可不可 [kbk]" id="Gaa-JH-WIp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xv6-Nl-nke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2864.8000000000002" y="-596.85157421289364"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hES-eu-KCU">
@@ -73,4 +269,12 @@
             <point key="canvasLocation" x="138.40000000000001" y="114.69265367316342"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1" width="698" height="922"/>
+        <image name="banner_2" width="1920" height="903"/>
+        <image name="banner_3" width="510" height="242"/>
+        <image name="boss" width="772" height="760"/>
+        <image name="hand" width="173" height="291"/>
+        <image name="menu" width="1002" height="1600"/>
+    </resources>
 </document>
