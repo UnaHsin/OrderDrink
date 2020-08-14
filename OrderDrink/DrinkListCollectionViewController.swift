@@ -12,6 +12,9 @@ class DrinkListCollectionViewController: UICollectionViewController {
     
     var fullScreenSize: CGSize!
     let imgList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "11", "11", "11", "11", "11", "11", ]
+    
+    var drinkList: [DrinkModel] = []
+    var drinkInfo: DrinkModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,25 +25,27 @@ class DrinkListCollectionViewController: UICollectionViewController {
         let layout = UICollectionViewFlowLayout()
         
         // 設置 section 的間距 四個數值分別代表 上、左、下、右 的間距
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        layout.sectionInset = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
         // 設置每一行的間距
         layout.minimumLineSpacing = 5
         // 設置每個 cell 的尺寸
-        layout.itemSize = CGSize(width: CGFloat(fullScreenSize.width)/3 - 10.0, height: CGFloat(fullScreenSize.width)/3 - 10.0)
+        layout.itemSize = CGSize(width: CGFloat(fullScreenSize.width)/2 - 10.0, height: CGFloat(fullScreenSize.width)/2 - 10.0)
         
         //添加layout設定
         collectionView.collectionViewLayout = layout
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.isNavigationBarHidden = false
     }
-    */
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        navigationController?.isNavigationBarHidden = true
+    }
 
     // MARK: UICollectionViewDataSource
 
@@ -62,36 +67,21 @@ class DrinkListCollectionViewController: UICollectionViewController {
     
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let indexStr = "\(indexPath.item)"
+        print("index: \(indexStr)")
+        //比對index number 和 drinkNumber後，取出單筆drink資訊
+        drinkList.forEach { (drink) in
+            if indexStr == drink.drinkNumber {
+                print("drinkInfo: \(drink)")
+                drinkInfo = drink
+            }
+        }
+        
+        //將drink資訊，帶入下一頁
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "OrderDrinkView") as! OrderDrinkViewController
+        controller.drinkInfo = drinkInfo
+        self.navigationController?.pushViewController(controller, animated: true)
     }
-    */
-
 }

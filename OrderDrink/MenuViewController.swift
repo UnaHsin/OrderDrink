@@ -12,6 +12,7 @@ class MenuViewController: UIViewController {
 
     @IBOutlet weak var orderBtn: UIButton!
     
+    var drinkList: [DrinkModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,8 @@ class MenuViewController: UIViewController {
         viewInit()
         
         btnInit()
+        
+        getDrinkInfo()
     }
     
 
@@ -29,5 +32,36 @@ class MenuViewController: UIViewController {
     func btnInit() {
         orderBtn.layer.cornerRadius = 5
     }
+    
+    func getDrinkInfo() {
+        let url = URL(string: ConfigSingleton.GET_DRINK_INFO)
+        var urlRequest = URLRequest(url: url!)
+        urlRequest.httpMethod = "GET"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            //print("response: \(response)")
+            let decoder = JSONDecoder()
+            if let data = data, let decodeData = try? decoder.decode([DrinkModel].self, from: data) {
+                //print("drinkList: \(decodeData)")
+                self.drinkList = decodeData
+                decodeData.forEach { (drink) in
+                    print("drink: \(drink)")
+                    
+                }
+                
+                
+                //decodeData.forEach { print("drink: \($0)")}
+            }
+        }
+        task.resume()
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gotoDrinkListCollection" {
+            if let drinkCollection = segue.destination as? DrinkListCollectionViewController {
+                drinkCollection.drinkList = drinkList
+            }
+        }
+    }
 }
