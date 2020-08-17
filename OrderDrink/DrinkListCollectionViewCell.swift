@@ -12,5 +12,5 @@ class DrinkListCollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet weak var drinkImg: UIImageView!
-    
+
 }

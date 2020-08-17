@@ -26,7 +26,7 @@ class MenuViewController: UIViewController {
     
 
     func viewInit() {
-        //orderBtn.setTitle("立即\n點餐", for: .normal)
+        orderBtn.isHidden = true
     }
     
     func btnInit() {
@@ -49,8 +49,12 @@ class MenuViewController: UIViewController {
                     print("drink: \(drink)")
                     
                 }
-                
-                
+                if self.drinkList.count > 1  && self.drinkList != nil {
+                    //在main thread中，變換UI
+                    DispatchQueue.main.sync {
+                        self.orderBtn.isHidden = false
+                    }
+                }
                 //decodeData.forEach { print("drink: \($0)")}
             }
         }

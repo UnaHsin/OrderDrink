@@ -10,8 +10,10 @@ import UIKit
 
 class DrinkListCollectionViewController: UICollectionViewController {
     
+    
+    
     var fullScreenSize: CGSize!
-    let imgList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "11", "11", "11", "11", "11", "11", ]
+    let imgList = ["loading", "2", "3", "loading", "loading", "6", "7", "8", "9", "10", "11", "12", "13", "loading", "loading", "16", "loading"]
     
     var drinkList: [DrinkModel] = []
     var drinkInfo: DrinkModel?
@@ -19,20 +21,7 @@ class DrinkListCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //取得螢幕尺寸
-        fullScreenSize = UIScreen.main.bounds.size
-        
-        let layout = UICollectionViewFlowLayout()
-        
-        // 設置 section 的間距 四個數值分別代表 上、左、下、右 的間距
-        layout.sectionInset = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
-        // 設置每一行的間距
-        layout.minimumLineSpacing = 5
-        // 設置每個 cell 的尺寸
-        layout.itemSize = CGSize(width: CGFloat(fullScreenSize.width)/2 - 10.0, height: CGFloat(fullScreenSize.width)/2 - 10.0)
-        
-        //添加layout設定
-        collectionView.collectionViewLayout = layout
+        viewInit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +34,24 @@ class DrinkListCollectionViewController: UICollectionViewController {
         super.viewDidDisappear(animated)
         
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    func viewInit() {
+        
+        //取得螢幕尺寸
+        fullScreenSize = UIScreen.main.bounds.size
+        
+        let layout = UICollectionViewFlowLayout()
+        
+        // 設置 section 的間距 四個數值分別代表 上、左、下、右 的間距
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        // 設置每一行的間距
+        layout.minimumLineSpacing = 10
+        // 設置每個 cell 的尺寸
+        layout.itemSize = CGSize(width: CGFloat(fullScreenSize.width)/2 - 10.0, height: CGFloat(fullScreenSize.width)/2 - 10.0)
+        
+        //添加layout設定
+        collectionView.collectionViewLayout = layout
     }
 
     // MARK: UICollectionViewDataSource
@@ -69,18 +76,18 @@ class DrinkListCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let indexStr = "\(indexPath.item)"
-        print("index: \(indexStr)")
+        let drinkNumber = "\(indexPath.item + 1)"
         //比對index number 和 drinkNumber後，取出單筆drink資訊
         drinkList.forEach { (drink) in
-            if indexStr == drink.drinkNumber {
-                print("drinkInfo: \(drink)")
+            if drinkNumber == drink.drinkNumber {
+                //print("drinkInfo: \(drink)")
                 drinkInfo = drink
             }
         }
         
         //將drink資訊，帶入下一頁
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "OrderDrinkView") as! OrderDrinkViewController
+        controller.indexInt = indexPath.item
         controller.drinkInfo = drinkInfo
         self.navigationController?.pushViewController(controller, animated: true)
     }
