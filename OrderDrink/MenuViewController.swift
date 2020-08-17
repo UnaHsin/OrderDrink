@@ -63,9 +63,7 @@ class MenuViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gotoDrinkListCollection" {
-            if let drinkCollection = segue.destination as? DrinkListCollectionViewController {
-                drinkCollection.drinkList = drinkList
-            }
+            DrinkListCollectionViewController.drinkList = drinkList
         }
     }
 }

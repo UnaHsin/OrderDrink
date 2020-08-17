@@ -19,6 +19,10 @@
 		78E70BA324E57731003BF5E2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E70BA224E57731003BF5E2 /* MenuViewController.swift */; };
 		78E70BA524E5894A003BF5E2 /* DrinkListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E70BA424E5894A003BF5E2 /* DrinkListCollectionViewController.swift */; };
 		78E70BA724E58C8C003BF5E2 /* DrinkListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E70BA624E58C8B003BF5E2 /* DrinkListCollectionViewCell.swift */; };
+		78E70BA924EA9A1B003BF5E2 /* CommonFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E70BA824EA9A1B003BF5E2 /* CommonFunc.swift */; };
+		78E70BAC24EA9ECA003BF5E2 /* OrderDrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E70BAB24EA9ECA003BF5E2 /* OrderDrinkModel.swift */; };
+		78E70BAE24EAACDE003BF5E2 /* ShoppingCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E70BAD24EAACDE003BF5E2 /* ShoppingCarViewController.swift */; };
+		78E70BB024EAB5CE003BF5E2 /* ShoppingCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E70BAF24EAB5CE003BF5E2 /* ShoppingCarTableViewCell.swift */; };
 		CAB84A38D227BEAB5CDD369E /* Pods_OrderDrink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E43ADE5B9A703AD65F3F49A /* Pods_OrderDrink.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +43,10 @@
 		78E70BA224E57731003BF5E2 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		78E70BA424E5894A003BF5E2 /* DrinkListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListCollectionViewController.swift; sourceTree = "<group>"; };
 		78E70BA624E58C8B003BF5E2 /* DrinkListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListCollectionViewCell.swift; sourceTree = "<group>"; };
+		78E70BA824EA9A1B003BF5E2 /* CommonFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunc.swift; sourceTree = "<group>"; };
+		78E70BAB24EA9ECA003BF5E2 /* OrderDrinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDrinkModel.swift; sourceTree = "<group>"; };
+		78E70BAD24EAACDE003BF5E2 /* ShoppingCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCarViewController.swift; sourceTree = "<group>"; };
+		78E70BAF24EAB5CE003BF5E2 /* ShoppingCarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCarTableViewCell.swift; sourceTree = "<group>"; };
 		B99760911CAA2A3FC6B10CD9 /* Pods-OrderDrink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderDrink.debug.xcconfig"; path = "Target Support Files/Pods-OrderDrink/Pods-OrderDrink.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,17 +87,29 @@
 				78BB68B524E18B9F00F4D532 /* SceneDelegate.swift */,
 				78BB68B724E18B9F00F4D532 /* ViewController.swift */,
 				78BB68C724E19DF000F4D532 /* OrderDrinkViewController.swift */,
+				78E70BA824EA9A1B003BF5E2 /* CommonFunc.swift */,
 				78E70B9E24E55BE9003BF5E2 /* ConfigSingleton.swift */,
 				78E70BA424E5894A003BF5E2 /* DrinkListCollectionViewController.swift */,
+				78E70BAD24EAACDE003BF5E2 /* ShoppingCarViewController.swift */,
+				78E70BAF24EAB5CE003BF5E2 /* ShoppingCarTableViewCell.swift */,
 				78E70BA624E58C8B003BF5E2 /* DrinkListCollectionViewCell.swift */,
 				78E70BA224E57731003BF5E2 /* MenuViewController.swift */,
-				78E70BA024E56008003BF5E2 /* DrinkModel.swift */,
+				78E70BAA24EA9EB0003BF5E2 /* Model */,
 				78BB68B924E18B9F00F4D532 /* Main.storyboard */,
 				78BB68BC24E18BA500F4D532 /* Assets.xcassets */,
 				78BB68BE24E18BA500F4D532 /* LaunchScreen.storyboard */,
 				78BB68C124E18BA500F4D532 /* Info.plist */,
 			);
 			path = OrderDrink;
+			sourceTree = "<group>";
+		};
+		78E70BAA24EA9EB0003BF5E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				78E70BA024E56008003BF5E2 /* DrinkModel.swift */,
+				78E70BAB24EA9ECA003BF5E2 /* OrderDrinkModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8AD0EA339580536969AC2610 /* Pods */ = {
@@ -224,12 +244,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E70BA924EA9A1B003BF5E2 /* CommonFunc.swift in Sources */,
+				78E70BAC24EA9ECA003BF5E2 /* OrderDrinkModel.swift in Sources */,
 				78E70BA124E56008003BF5E2 /* DrinkModel.swift in Sources */,
 				78E70BA524E5894A003BF5E2 /* DrinkListCollectionViewController.swift in Sources */,
 				78BB68B824E18B9F00F4D532 /* ViewController.swift in Sources */,
 				78BB68B424E18B9F00F4D532 /* AppDelegate.swift in Sources */,
 				78E70BA324E57731003BF5E2 /* MenuViewController.swift in Sources */,
+				78E70BAE24EAACDE003BF5E2 /* ShoppingCarViewController.swift in Sources */,
 				78E70BA724E58C8C003BF5E2 /* DrinkListCollectionViewCell.swift in Sources */,
+				78E70BB024EAB5CE003BF5E2 /* ShoppingCarTableViewCell.swift in Sources */,
 				78E70B9F24E55BE9003BF5E2 /* ConfigSingleton.swift in Sources */,
 				78BB68B624E18B9F00F4D532 /* SceneDelegate.swift in Sources */,
 				78BB68C824E19DF000F4D532 /* OrderDrinkViewController.swift in Sources */,

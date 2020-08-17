@@ -18,16 +18,20 @@ class OrderDrinkViewController: UIViewController {
     @IBOutlet weak var sugarBtn: UIButton!
     @IBOutlet weak var mediumView: UIView!
     @IBOutlet weak var largeView: UIView!
+    @IBOutlet weak var orderPersonText: UITextField!
     
-    
+    let commonFunc = CommonFunc.share
     var drinkInfo: DrinkModel?
     var indexInt = 0
     let imgList = ["c_1", "c_2", "c_3", "sale", "sale", "c_6", "c_7", "c_8", "c_9", "c_10", "c_11", "c_12", "c_13", "sale", "sale", "c_16", "sale"]
     let iceList = ["完全去冰", "去冰", "微冰", "少冰", "正常冰", "多冰"]
     let sugarList = ["無糖", "微糖", "半糖", "少糖", "正常糖", "多糖"]
     
+    var drinkName = ""
     var iceLevel = ""
     var sugarLevel = ""
+    var drinkSize = ""
+    var drinkPrice = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +43,8 @@ class OrderDrinkViewController: UIViewController {
         btnInit()
         
         tapGestureInit()
+        
+        commonFunc.setViewController(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,11 +93,41 @@ class OrderDrinkViewController: UIViewController {
     
     
     @IBAction func orderBtnPressed(_ sender: Any) {
+        let orderPerson = orderPersonText.text ?? ""
         
+        //確認該有的資訊都有
+        if "".elementsEqual(orderPerson) {
+            commonFunc.showAlert(message: "請留下訂購者名字喔！")
+            return
+        }
+        
+        if "".elementsEqual(drinkSize) {
+            commonFunc.showAlert(message: "請確定飲料大小喔！")
+            return
+        }
+        
+        if "".elementsEqual(iceLevel) {
+            commonFunc.showAlert(message: "請確定冰塊量喔！")
+            return
+        }
+        
+        if "".elementsEqual(sugarLevel) {
+            commonFunc.showAlert(message: "請確定糖度喔！")
+            return
+        }
+        
+        //將訂購資訊匯入OrderDrink
+        var orderDrink = OrderDrinkModel(orderPerson: orderPerson, drinkName: drinkName, drinkSize: drinkSize, drinkIce: iceLevel, drinkSugar: sugarLevel, drinkPrice: drinkPrice)
+        
+        //帶回上一頁
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "DrinkListCollectionView") as! DrinkListCollectionViewController
+        DrinkListCollectionViewController.orderDrinkList.append(orderDrink)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func viewInit() {
-        navigationItem.title = "\(drinkInfo?.drinkName ?? "")" 
+        drinkName = drinkInfo?.drinkName ?? ""
+        navigationItem.title = drinkName
         drinkImg.image = UIImage(named: imgList[indexInt])
         descriptionLab.text = drinkInfo?.description
         mediumPriceLab.text = drinkInfo?.mediumPrice
@@ -124,12 +160,18 @@ class OrderDrinkViewController: UIViewController {
     //MARK: objc func
     @objc func mediumPressed() {
         print("點擊mediumView")
+        drinkSize = "中杯"
+        drinkPrice = drinkInfo!.mediumPrice
+        
         mediumView.setPressed()
         largeView.setUnPressed()
     }
     
     @objc func largePressed() {
         print("點擊largeView")
+        drinkSize = "大杯"
+        drinkPrice = drinkInfo!.largePrice
+        
         largeView.setPressed()
         mediumView.setUnPressed()
     }
