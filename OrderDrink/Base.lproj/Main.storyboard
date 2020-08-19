@@ -24,7 +24,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pFz-fY-j53" kind="show" id="xbn-4t-Xoz"/>
+                                    <segue destination="pFz-fY-j53" kind="showDetail" id="G3b-X8-9qv"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_2" translatesAutoresizingMaskIntoConstraints="NO" id="b8V-T4-sBM">
@@ -263,7 +263,7 @@
             </objects>
             <point key="canvasLocation" x="2862" y="-602"/>
         </scene>
-        <!--Shopping Car View Controller-->
+        <!--購物車總覽-->
         <scene sceneID="dih-r9-t5F">
             <objects>
                 <viewController id="hyL-D7-noN" customClass="ShoppingCarViewController" customModule="OrderDrink" customModuleProvider="target" sceneMemberID="viewController">
@@ -299,9 +299,20 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFT-Ge-rA8">
                                 <rect key="frame" x="0.0" y="543" width="375" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZn-EB-NGE">
+                                        <rect key="frame" x="304" y="10" width="42" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DZn-EB-NGE" secondAttribute="trailing" constant="29" id="7UV-f0-MeF"/>
+                                    <constraint firstAttribute="bottom" secondItem="DZn-EB-NGE" secondAttribute="bottom" constant="10" id="Khe-zW-MfQ"/>
                                     <constraint firstAttribute="width" secondItem="nFT-Ge-rA8" secondAttribute="height" multiplier="75:11" id="aCq-ec-0dX"/>
+                                    <constraint firstItem="DZn-EB-NGE" firstAttribute="top" secondItem="nFT-Ge-rA8" secondAttribute="top" constant="10" id="mgl-WX-ws8"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6bq-nk-QnI">
@@ -376,6 +387,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="nFT-Ge-rA8" firstAttribute="bottom" secondItem="OMu-h9-QaD" secondAttribute="bottom" id="63m-er-pJz"/>
                             <constraint firstItem="nFT-Ge-rA8" firstAttribute="top" secondItem="6bq-nk-QnI" secondAttribute="bottom" id="EJg-HV-39R"/>
                             <constraint firstItem="nFT-Ge-rA8" firstAttribute="bottom" secondItem="OMu-h9-QaD" secondAttribute="bottom" id="I85-Ar-jU7"/>
                             <constraint firstItem="6bq-nk-QnI" firstAttribute="trailing" secondItem="OMu-h9-QaD" secondAttribute="trailing" id="LIW-w2-ith"/>
@@ -385,17 +397,22 @@
                             <constraint firstItem="6bq-nk-QnI" firstAttribute="top" secondItem="9AY-ov-ZWh" secondAttribute="bottom" id="bU7-mI-1S8"/>
                             <constraint firstItem="nFT-Ge-rA8" firstAttribute="trailing" secondItem="OMu-h9-QaD" secondAttribute="trailing" id="i9C-PH-Ov7"/>
                             <constraint firstItem="6bq-nk-QnI" firstAttribute="leading" secondItem="OMu-h9-QaD" secondAttribute="leading" id="jV4-RG-IXt"/>
+                            <constraint firstItem="nFT-Ge-rA8" firstAttribute="leading" secondItem="OMu-h9-QaD" secondAttribute="leading" id="mL3-tS-K4Q"/>
                             <constraint firstItem="9AY-ov-ZWh" firstAttribute="top" secondItem="OMu-h9-QaD" secondAttribute="top" id="nEp-Cu-RDL"/>
+                            <constraint firstItem="nFT-Ge-rA8" firstAttribute="trailing" secondItem="OMu-h9-QaD" secondAttribute="trailing" id="uCb-an-VMh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OMu-h9-QaD"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NKZ-b5-Svk">
-                        <barButtonItem key="rightBarButtonItem" title="送出" id="211-MS-5Dy">
+                    <navigationItem key="navigationItem" title="購物車總覽" id="val-4z-WPQ">
+                        <barButtonItem key="rightBarButtonItem" title="送出" id="XvO-N6-qHh">
                             <connections>
-                                <action selector="sendOrderPressed:" destination="hyL-D7-noN" id="9Du-R1-RQC"/>
+                                <action selector="sendOrderPressed:" destination="hyL-D7-noN" id="2pD-iU-N4G"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="totalPriceLab" destination="DZn-EB-NGE" id="0PK-Sg-tTg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZo-xe-2ba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

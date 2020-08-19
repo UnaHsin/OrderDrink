@@ -31,6 +31,8 @@ class DrinkListCollectionViewController: UICollectionViewController {
         
         navigationController?.isNavigationBarHidden = false
         
+        tabBarController?.tabBar.isHidden = true
+        
         print("orderDrinkList: \(DrinkListCollectionViewController.orderDrinkList)")
     }
     

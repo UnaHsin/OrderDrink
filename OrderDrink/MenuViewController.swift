@@ -28,6 +28,8 @@ class MenuViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.isNavigationBarHidden = true
+        
+        tabBarController?.tabBar.isHidden = false
     }
 
 
