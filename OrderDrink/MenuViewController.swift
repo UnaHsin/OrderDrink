@@ -21,12 +21,18 @@ class MenuViewController: UIViewController {
         
         btnInit()
         
-        getDrinkInfo()
+        //getDrinkInfo()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.isNavigationBarHidden = true
+    }
+
 
     func viewInit() {
-        orderBtn.isHidden = true
+        //orderBtn.isHidden = true
     }
     
     func btnInit() {
@@ -34,7 +40,7 @@ class MenuViewController: UIViewController {
     }
     
     func getDrinkInfo() {
-        let url = URL(string: ConfigSingleton.GET_DRINK_INFO)
+        let url = URL(string: ConfigSingleton.GET_DRINK_INFO_URL)
         var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = "GET"
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")

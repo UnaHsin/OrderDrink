@@ -25,3 +25,7 @@ struct OrderDrinkModel: Codable {
         case drinkPrice = "drinkPrice"
     }
 }
+
+struct OrderDrinkData: Codable {
+       var data: [OrderDrinkModel]
+   }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fzd-la-nBM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_2" translatesAutoresizingMaskIntoConstraints="NO" id="b8V-T4-sBM">
-                                <rect key="frame" x="0.0" y="126" width="375" height="185"/>
+                                <rect key="frame" x="0.0" y="82" width="375" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="b8V-T4-sBM" secondAttribute="height" multiplier="75:37" id="OpE-xj-EzG"/>
                                 </constraints>
@@ -50,35 +50,35 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="114.69265367316342"/>
         </scene>
-        <!--消息 [news]-->
+        <!--View Controller-->
         <scene sceneID="8hv-Te-SzL">
             <objects>
                 <viewController id="tqh-P5-DQ2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tqo-V9-LNA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="lzR-gT-ct5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="消息 [news]" id="4Ln-5M-J2d"/>
+                    <navigationItem key="navigationItem" id="NJO-l9-GfT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAh-CX-Hum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2863" y="780"/>
+            <point key="canvasLocation" x="3800.8000000000002" y="922.48875562218893"/>
         </scene>
-        <!--茶 [tea]-->
+        <!--Menu View Controller-->
         <scene sceneID="SDY-iL-oDV">
             <objects>
-                <viewController id="kC0-CC-RWf" customClass="MenuViewController" customModule="OrderDrink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuView" id="kC0-CC-RWf" customClass="MenuViewController" customModule="OrderDrink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ol5-yS-EMX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="00W-34-h8q">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="542"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="UPT-7G-zaj">
-                                <rect key="frame" x="302" y="531" width="53" height="53"/>
+                                <rect key="frame" x="302" y="511" width="53" height="53"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UPT-7G-zaj" secondAttribute="height" multiplier="1:1" id="cVr-AF-XH0"/>
@@ -105,21 +105,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vF4-gr-cZ8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="茶 [tea]" id="X3j-3Z-aOX"/>
+                    <navigationItem key="navigationItem" id="GBh-kL-Noq"/>
                     <connections>
                         <outlet property="orderBtn" destination="UPT-7G-zaj" id="vz8-5N-urS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHR-Vy-sYA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2861.5999999999999" y="114.69265367316342"/>
+            <point key="canvasLocation" x="3800.8000000000002" y="114.69265367316342"/>
         </scene>
         <!--飲料清單-->
         <scene sceneID="zp2-eo-pRa">
             <objects>
                 <collectionViewController storyboardIdentifier="DrinkListCollectionView" id="hOb-ne-98q" customClass="DrinkListCollectionViewController" customModule="OrderDrink" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eV8-9I-MeL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.30133903029999998" blue="0.40833789110000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VNP-77-j7B">
@@ -178,12 +178,12 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7t-cU-k2M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3746" y="115"/>
+            <point key="canvasLocation" x="4684" y="114.69265367316342"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Gv8-8F-9tQ">
             <objects>
-                <tabBarController id="pFz-fY-j53" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarView" id="pFz-fY-j53" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="bFh-Ik-aW0"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sZ0-uG-3aS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -191,31 +191,31 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="JqF-Gd-Kgz" kind="relationship" relationship="viewControllers" id="psJ-7Y-Ej0"/>
-                        <segue destination="kC0-CC-RWf" kind="relationship" relationship="viewControllers" id="h72-5r-7mr"/>
-                        <segue destination="tqh-P5-DQ2" kind="relationship" relationship="viewControllers" id="dS7-SV-D8Q"/>
+                        <segue destination="JqF-Gd-Kgz" kind="relationship" relationship="viewControllers" id="szv-9x-PP2"/>
+                        <segue destination="kr8-8I-JUX" kind="relationship" relationship="viewControllers" id="hyD-XP-Hdi"/>
+                        <segue destination="ORq-Zy-x3X" kind="relationship" relationship="viewControllers" id="y9Q-oa-ZZo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8r-nU-jVi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1921" y="114"/>
         </scene>
-        <!--可不可 [kbk]-->
+        <!--可不可 [kuk]-->
         <scene sceneID="7CS-vn-ebx">
             <objects>
                 <viewController id="JqF-Gd-Kgz" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zHl-aJ-T7h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_3" translatesAutoresizingMaskIntoConstraints="NO" id="qP2-yx-EK0">
-                                <rect key="frame" x="0.0" y="44" width="375" height="145"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qP2-yx-EK0" secondAttribute="height" multiplier="75:29" id="rz8-5v-Rae"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcm-b0-6cg">
-                                <rect key="frame" x="16" y="218" width="265" height="342"/>
+                                <rect key="frame" x="16" y="174" width="265" height="366"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">創立於2008年初夏，台中市向上市場旁，用了8年時間，近3000個日子，堅持做對的事，我們相信任何事物，歸根究底回到最初的本質，都會呈現一種單純美好的狀態-和人一樣。
 
@@ -226,14 +226,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand" translatesAutoresizingMaskIntoConstraints="NO" id="fSc-BH-eon">
-                                <rect key="frame" x="236" y="166" width="123" height="266"/>
+                                <rect key="frame" x="236" y="122" width="123" height="266"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="266" id="Gw1-tz-Us6"/>
                                     <constraint firstAttribute="width" constant="123" id="WoA-hc-9Yd"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boss" translatesAutoresizingMaskIntoConstraints="NO" id="itC-Ox-FtC">
-                                <rect key="frame" x="225" y="495" width="118" height="123"/>
+                                <rect key="frame" x="225" y="475" width="118" height="123"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="118" id="c58-qG-VOW"/>
                                     <constraint firstAttribute="height" constant="123" id="u54-5M-uBn"/>
@@ -256,40 +256,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9qx-gu-7Hb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="可不可 [kbk]" id="Gaa-JH-WIp"/>
+                    <tabBarItem key="tabBarItem" title="可不可 [kuk]" id="woP-7U-yV0"/>
+                    <navigationItem key="navigationItem" id="dW0-WS-71a"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xv6-Nl-nke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2864.8000000000002" y="-596.85157421289364"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="hES-eu-KCU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fzd-la-nBM" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="csB-eq-V1J">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Q18-9z-fKs"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mv0-Hj-dze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="138.40000000000001" y="114.69265367316342"/>
+            <point key="canvasLocation" x="2862" y="-602"/>
         </scene>
         <!--Shopping Car View Controller-->
         <scene sceneID="dih-r9-t5F">
             <objects>
                 <viewController id="hyL-D7-noN" customClass="ShoppingCarViewController" customModule="OrderDrink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rJB-94-P7u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9AY-ov-ZWh">
-                                <rect key="frame" x="0.0" y="44" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="訂購者" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6Y-f4-hfu">
                                         <rect key="frame" x="19" y="8" width="61.5" height="24"/>
@@ -315,14 +298,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFT-Ge-rA8">
-                                <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="543" width="375" height="55"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nFT-Ge-rA8" secondAttribute="height" multiplier="75:11" id="aCq-ec-0dX"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6bq-nk-QnI">
-                                <rect key="frame" x="0.0" y="84" width="375" height="528"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="447"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingCarCell" rowHeight="89" id="nZY-IR-0Zc" customClass="ShoppingCarTableViewCell" customModule="OrderDrink" customModuleProvider="target">
@@ -406,11 +389,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OMu-h9-QaD"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NKZ-b5-Svk"/>
+                    <navigationItem key="navigationItem" id="NKZ-b5-Svk">
+                        <barButtonItem key="rightBarButtonItem" title="送出" id="211-MS-5Dy">
+                            <connections>
+                                <action selector="sendOrderPressed:" destination="hyL-D7-noN" id="9Du-R1-RQC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZo-xe-2ba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4570.3999999999996" y="-602.24887556221893"/>
+            <point key="canvasLocation" x="5509.6000000000004" y="-602.24887556221893"/>
         </scene>
         <!--Order Drink View Controller-->
         <scene sceneID="nP1-CC-G16">
@@ -649,7 +638,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLH-5K-f37" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4572" y="113.79310344827587"/>
+            <point key="canvasLocation" x="5511.1999999999998" y="113.79310344827587"/>
+        </scene>
+        <!--茶 [tea]-->
+        <scene sceneID="FMP-r9-Vrc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kr8-8I-JUX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="茶 [tea]" id="X3j-3Z-aOX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sdH-TU-tY3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kC0-CC-RWf" kind="relationship" relationship="rootViewController" id="lAT-0L-esm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Exe-em-V4I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2861.5999999999999" y="114.69265367316342"/>
+        </scene>
+        <!--消息 [news]-->
+        <scene sceneID="A1I-tt-F9i">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ORq-Zy-x3X" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="消息 [news]" id="4Ln-5M-J2d"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fs3-0h-yQD">
+                        <rect key="frame" x="0.0" y="-20" width="0.0" height="0.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tqh-P5-DQ2" kind="relationship" relationship="rootViewController" id="dPF-aq-Kq6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2IJ-jr-xw8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2861.5999999999999" y="922.48875562218893"/>
         </scene>
     </scenes>
     <resources>

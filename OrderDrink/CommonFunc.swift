@@ -26,13 +26,17 @@ class CommonFunc {
         nowCV!.present(alert, animated: true)
     }
     
-    func showAlertAction(title: String? = nil, message: String, hander: ((UIAlertAction) -> Void)?) {
+    func showAlertAction(title: String? = nil, message: String, showCancelBtn: Bool, hander: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "確定", style: .default, handler: hander)
         let cancel = UIAlertAction(title: "取消", style: .default)
         
-        alert.addAction(cancel)
         alert.addAction(ok)
+        
+        //true = 顯示取消鍵
+        if showCancelBtn {
+           alert.addAction(cancel)
+        }
         nowCV!.present(alert, animated: true)
     }
 }
