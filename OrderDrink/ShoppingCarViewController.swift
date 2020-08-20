@@ -110,7 +110,12 @@ class ShoppingCarViewController: UIViewController, UITableViewDelegate, UITableV
         
         cell.orderNameLab.text = orderDrink.orderPerson
         cell.drinkNameLab.text = orderDrink.drinkName
-        cell.iceSugarLevelLab.text = "\(orderDrink.drinkIce)、\(orderDrink.drinkSugar)、珍珠"
+        if "".elementsEqual(orderDrink.addPearl) {
+            cell.iceSugarLevelLab.text = "\(orderDrink.drinkIce)、\(orderDrink.drinkSugar)"
+        } else {
+            cell.iceSugarLevelLab.text = "\(orderDrink.drinkIce)、\(orderDrink.drinkSugar)、\(orderDrink.addPearl)"
+        }
+        
         cell.drinkPriceLab.text = orderDrink.drinkPrice
         
         

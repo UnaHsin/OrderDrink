@@ -19,6 +19,8 @@ class OrderDrinkViewController: UIViewController {
     @IBOutlet weak var mediumView: UIView!
     @IBOutlet weak var largeView: UIView!
     @IBOutlet weak var orderPersonText: UITextField!
+    @IBOutlet weak var pearlSwitch: UISwitch!
+    @IBOutlet weak var shoppingCarBtn: UIButton!
     
     let commonFunc = CommonFunc.share
     var drinkInfo: DrinkModel?
@@ -32,6 +34,7 @@ class OrderDrinkViewController: UIViewController {
     var sugarLevel = ""
     var drinkSize = ""
     var drinkPrice = ""
+    var addPearl = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +95,15 @@ class OrderDrinkViewController: UIViewController {
     }
     
     
+    @IBAction func addPearlChanged(_ sender: UISwitch) {
+        
+        if sender.isOn {
+            addPearl = "加珍珠"
+        } else {
+            addPearl = ""
+        }
+    }
+    
     @IBAction func orderBtnPressed(_ sender: Any) {
         let orderPerson = orderPersonText.text ?? ""
         
@@ -116,8 +128,13 @@ class OrderDrinkViewController: UIViewController {
             return
         }
         
+        if addPearl != "" {
+            let drinkPriceInt = Int(drinkPrice)! + 10
+            drinkPrice = "\(drinkPriceInt)"
+        }
+        
         //將訂購資訊匯入OrderDrink
-        var orderDrink = OrderDrinkModel(orderPerson: orderPerson, drinkName: drinkName, drinkSize: drinkSize, drinkIce: iceLevel, drinkSugar: sugarLevel, drinkPrice: drinkPrice)
+        var orderDrink = OrderDrinkModel(orderPerson: orderPerson, drinkName: drinkName, drinkSize: drinkSize, drinkIce: iceLevel, drinkSugar: sugarLevel, addPearl: addPearl, drinkPrice: drinkPrice)
         
         //帶回上一頁
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "DrinkListCollectionView") as! DrinkListCollectionViewController
@@ -141,6 +158,7 @@ class OrderDrinkViewController: UIViewController {
     func btnInit() {
         iceBtn.layer.cornerRadius = 5
         sugarBtn.layer.cornerRadius = 5
+        shoppingCarBtn.layer.cornerRadius = 5
     }
     
     func tapGestureInit() {
@@ -169,11 +187,16 @@ class OrderDrinkViewController: UIViewController {
     
     @objc func largePressed() {
         print("點擊largeView")
-        drinkSize = "大杯"
-        drinkPrice = drinkInfo!.largePrice
         
-        largeView.setPressed()
-        mediumView.setUnPressed()
+        if "no".elementsEqual(drinkInfo!.largePrice) {
+            commonFunc.showAlert(message: "沒有賣大杯喔，中杯如何？")
+        } else {
+            drinkSize = "大杯"
+            drinkPrice = drinkInfo!.largePrice
+            
+            largeView.setPressed()
+            mediumView.setUnPressed()
+        }
     }
 }
 

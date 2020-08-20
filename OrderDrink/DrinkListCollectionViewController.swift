@@ -11,7 +11,8 @@ import UIKit
 class DrinkListCollectionViewController: UICollectionViewController {
     
     static var drinkList: [DrinkModel] = []
-    static var orderDrinkList: [OrderDrinkModel] = [OrderDrinkModel(orderPerson: "甲甲甲", drinkName: "麗春紅茶", drinkSize: "中杯", drinkIce: "微冰", drinkSugar: "無糖", drinkPrice: "25"), OrderDrinkModel(orderPerson: "乙乙乙", drinkName: "熟成冷露", drinkSize: "中杯", drinkIce: "完全去冰", drinkSugar: "半糖", drinkPrice: "25")]
+    static var orderDrinkList: [OrderDrinkModel] = []
+    //static var orderDrinkList: [OrderDrinkModel] = [OrderDrinkModel(orderPerson: "甲甲甲", drinkName: "麗春紅茶", drinkSize: "中杯", drinkIce: "微冰", drinkSugar: "無糖", drinkPrice: "25"), OrderDrinkModel(orderPerson: "乙乙乙", drinkName: "熟成冷露", drinkSize: "中杯", drinkIce: "完全去冰", drinkSugar: "半糖", drinkPrice: "25")]
     
     var fullScreenSize: CGSize!
     let imgList = ["loading", "2", "3", "loading", "loading", "6", "7", "8", "9", "10", "11", "12", "13", "loading", "loading", "16", "loading"]
@@ -40,6 +41,11 @@ class DrinkListCollectionViewController: UICollectionViewController {
         super.viewDidDisappear(animated)
         
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    @IBAction func goBackPressed(_ sender: Any) {
+        let controller = self.storyboard!.instantiateViewController(withIdentifier: "MenuView")
+        self.navigationController!.pushViewController(controller, animated: false)
     }
     
     func viewInit() {

@@ -21,7 +21,7 @@ class MenuViewController: UIViewController {
         
         btnInit()
         
-        //getDrinkInfo()
+        getDrinkInfo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +34,7 @@ class MenuViewController: UIViewController {
 
 
     func viewInit() {
-        //orderBtn.isHidden = true
+        orderBtn.isHidden = true
     }
     
     func btnInit() {

@@ -14,6 +14,7 @@ struct OrderDrinkModel: Codable {
     var drinkSize: String
     var drinkIce: String
     var drinkSugar: String
+    var addPearl: String
     var drinkPrice: String
     
     enum CodingKeys: String, CodingKey {
@@ -22,6 +23,7 @@ struct OrderDrinkModel: Codable {
         case drinkSize = "drinkSize"
         case drinkIce = "drinkIce"
         case drinkSugar = "drinkSugar"
+        case addPearl = "addPearl"
         case drinkPrice = "drinkPrice"
     }
 }
