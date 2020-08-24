@@ -50,22 +50,6 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="114.69265367316342"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="8hv-Te-SzL">
-            <objects>
-                <viewController id="tqh-P5-DQ2" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tqo-V9-LNA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="lzR-gT-ct5"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="NJO-l9-GfT"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bAh-CX-Hum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3800.8000000000002" y="922.48875562218893"/>
-        </scene>
         <!--Menu View Controller-->
         <scene sceneID="SDY-iL-oDV">
             <objects>
@@ -75,7 +59,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="00W-34-h8q">
-                                <rect key="frame" x="0.0" y="56" width="375.00000000000023" height="542"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="542"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="UPT-7G-zaj">
                                 <rect key="frame" x="302" y="511" width="53" height="53"/>
@@ -198,7 +182,6 @@
                     <connections>
                         <segue destination="JqF-Gd-Kgz" kind="relationship" relationship="viewControllers" id="szv-9x-PP2"/>
                         <segue destination="kr8-8I-JUX" kind="relationship" relationship="viewControllers" id="hyD-XP-Hdi"/>
-                        <segue destination="ORq-Zy-x3X" kind="relationship" relationship="viewControllers" id="y9Q-oa-ZZo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8r-nU-jVi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -435,7 +418,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jka-em-P29">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="850"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="950"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4sp-Di-4uC">
                                                 <rect key="frame" x="67" y="50" width="241" height="237"/>
@@ -633,7 +616,7 @@
                                             <constraint firstItem="UWE-cX-c15" firstAttribute="trailing" secondItem="QUh-wF-Itv" secondAttribute="trailing" id="U6I-ue-H4a"/>
                                             <constraint firstItem="j00-ou-8z3" firstAttribute="leading" secondItem="UWE-cX-c15" secondAttribute="leading" id="XDf-1D-2tt"/>
                                             <constraint firstItem="Kkf-IA-EmW" firstAttribute="centerX" secondItem="jka-em-P29" secondAttribute="centerX" id="cGp-Gt-EPh"/>
-                                            <constraint firstAttribute="height" constant="850" id="h2k-N2-OC2"/>
+                                            <constraint firstAttribute="height" constant="950" id="h2k-N2-OC2"/>
                                             <constraint firstItem="QUh-wF-Itv" firstAttribute="trailing" secondItem="4sp-Di-4uC" secondAttribute="trailing" id="m4Q-6c-a7D"/>
                                             <constraint firstItem="QUh-wF-Itv" firstAttribute="leading" secondItem="4sp-Di-4uC" secondAttribute="leading" id="mdI-5M-hKW"/>
                                             <constraint firstAttribute="trailing" secondItem="4sp-Di-4uC" secondAttribute="trailing" constant="67" id="o80-Ak-lgT"/>
@@ -702,25 +685,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Exe-em-V4I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2861.5999999999999" y="114.69265367316342"/>
-        </scene>
-        <!--消息 [news]-->
-        <scene sceneID="A1I-tt-F9i">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ORq-Zy-x3X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="消息 [news]" id="4Ln-5M-J2d"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fs3-0h-yQD">
-                        <rect key="frame" x="0.0" y="-20" width="0.0" height="0.0"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="tqh-P5-DQ2" kind="relationship" relationship="rootViewController" id="dPF-aq-Kq6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2IJ-jr-xw8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2861.5999999999999" y="922.48875562218893"/>
         </scene>
     </scenes>
     <resources>

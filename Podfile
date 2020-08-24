@@ -6,6 +6,6 @@ target 'OrderDrink' do
   use_frameworks!
 
   # Pods for OrderDrink
-  pod 'Alamofire'
+  pod 'SVProgressHUD'
 
 end
